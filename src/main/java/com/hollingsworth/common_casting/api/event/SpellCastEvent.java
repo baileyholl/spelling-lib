@@ -1,7 +1,7 @@
-package com.example.examplemod.api.event;
+package com.hollingsworth.common_casting.api.event;
 
-import com.example.examplemod.api.spell.CastTarget;
-import com.example.examplemod.api.spell.ICasterRef;
+import com.hollingsworth.common_casting.api.spell.CastTarget;
+import com.hollingsworth.common_casting.api.spell.ICasterRef;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.eventbus.api.Cancelable;
 import net.minecraftforge.eventbus.api.Event;
@@ -12,6 +12,8 @@ public class SpellCastEvent extends Event {
     public CastTarget castTarget;
 
     public CompoundTag spellData;
+
+
 
     private SpellCastEvent(ICasterRef caster, CastTarget castTarget, CompoundTag spellData) {
         this.caster = caster;

@@ -1,7 +1,7 @@
-package com.example.examplemod.api.event;
+package com.hollingsworth.common_casting.api.event;
 
-import com.example.examplemod.api.spell.ICasterRef;
-import com.example.examplemod.api.spell.ResolveTarget;
+import com.hollingsworth.common_casting.api.spell.ICasterRef;
+import com.hollingsworth.common_casting.api.spell.ResolveTarget;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.eventbus.api.Cancelable;
 
@@ -10,15 +10,39 @@ import net.minecraftforge.eventbus.api.Cancelable;
  */
 public class SpellResolveEvent {
 
-    public ICasterRef caster;
+    private ICasterRef caster;
 
-    public ResolveTarget resolveTarget;
+    private ResolveTarget resolveTarget;
 
-    public CompoundTag spellData;
+    private CompoundTag spellData;
 
     private SpellResolveEvent(ICasterRef caster, ResolveTarget resolveTarget, CompoundTag spellData) {
         this.caster = caster;
         this.resolveTarget = resolveTarget;
+        this.spellData = spellData;
+    }
+
+    public ICasterRef getCaster() {
+        return caster;
+    }
+
+    public void setCaster(ICasterRef caster) {
+        this.caster = caster;
+    }
+
+    public ResolveTarget getResolveTarget() {
+        return resolveTarget;
+    }
+
+    public void setResolveTarget(ResolveTarget resolveTarget) {
+        this.resolveTarget = resolveTarget;
+    }
+
+    public CompoundTag getSpellData() {
+        return spellData;
+    }
+
+    public void setSpellData(CompoundTag spellData) {
         this.spellData = spellData;
     }
 

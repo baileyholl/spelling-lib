@@ -1,4 +1,4 @@
-package com.example.examplemod.api.spell;
+package com.hollingsworth.common_casting.api.spell;
 
 import net.minecraft.world.phys.HitResult;
 
@@ -7,9 +7,17 @@ import net.minecraft.world.phys.HitResult;
  * Ex. The raytrace result of the players look vector.
  */
 public class CastTarget {
-    public HitResult hitResult;
+    private HitResult hitResult;
 
     public CastTarget(HitResult hitResult) {
+        this.hitResult = hitResult;
+    }
+
+    public HitResult getHitResult() {
+        return hitResult;
+    }
+
+    public void setHitResult(HitResult hitResult) {
         this.hitResult = hitResult;
     }
 }
